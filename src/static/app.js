@@ -4,6 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.getElementById("signup-form");
   const messageDiv = document.getElementById("message");
 
+  // Add dark mode toggle
+  const darkModeToggle = document.createElement("button");
+  darkModeToggle.textContent = "Toggle Dark Mode";
+  darkModeToggle.className = "dark-mode-toggle";
+  document.body.prepend(darkModeToggle);
+
+  darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+  });
+
   // Function to fetch activities from API
   async function fetchActivities() {
     try {
